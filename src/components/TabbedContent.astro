@@ -5,11 +5,11 @@ import HowItWorksTab from './tabs/HowItWorksTab.astro';
 import AboutTab from './tabs/AboutTab.astro';
 ---
 <section id={TABBED_CONTENT_ID} class="max-w-6xl mx-auto px-6 lg:px-8 py-20 lg:py-28 scroll-mt-24">
-  <div class="flex flex-wrap gap-1 p-1.5 bg-steel-light border border-divider rounded-md mb-14" role="tablist" aria-label="Content sections">
+  <div class="flex flex-wrap gap-1 p-1.5 bg-zinc-800/60 border border-zinc-700/40 rounded-lg mb-14" role="tablist" aria-label="Content sections">
     {NAV_ITEMS.map((item, i) => (
       <button
         type="button"
-        class="tab-btn px-4 py-2.5 rounded text-[0.8125rem] font-medium tracking-wide transition-colors focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-2"
+        class="tab-btn px-4 py-2.5 rounded-lg text-[0.8125rem] font-medium tracking-wide transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-zinc-900"
         data-tab={item.id}
         role="tab"
         aria-selected={i === 0}
@@ -42,10 +42,10 @@ import AboutTab from './tabs/AboutTab.astro';
       const panel = document.getElementById(`panel-${id}`);
       if (btn && panel) {
         const isActive = id === tabId;
-        btn.classList.toggle('bg-primary', isActive);
-        btn.classList.toggle('text-on-primary', isActive);
+        btn.classList.toggle('bg-white', isActive);
+        btn.classList.toggle('text-zinc-900', isActive);
         btn.classList.toggle('bg-transparent', !isActive);
-        btn.classList.toggle('text-foreground', !isActive);
+        btn.classList.toggle('text-zinc-400', !isActive);
         btn.setAttribute('aria-selected', String(isActive));
         panel.classList.toggle('hidden', !isActive);
       }
@@ -75,9 +75,9 @@ import AboutTab from './tabs/AboutTab.astro';
 
 <style>
   .tab-btn:not([aria-selected="true"]) {
-    @apply bg-transparent text-steel hover:text-foreground hover:bg-surface;
+    @apply bg-transparent text-zinc-400 hover:text-white hover:bg-zinc-700/50;
   }
   .tab-btn[aria-selected="true"] {
-    @apply bg-primary text-on-primary;
+    @apply bg-white text-zinc-900;
   }
 </style>

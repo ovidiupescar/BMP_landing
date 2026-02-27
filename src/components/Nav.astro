@@ -4,11 +4,11 @@ import { NAV_ITEMS, TABBED_CONTENT_ID, PHONE_NUMBER } from '../lib/constants';
 <header id="main-nav" class="fixed top-0 left-0 right-0 z-40 transition-all duration-200">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <nav class="flex items-center justify-between h-16 lg:h-[4.25rem]" aria-label="Main navigation">
-      <a href="#" class="font-semibold text-foreground text-[0.9375rem] tracking-tight">BMP: Build. Manage. Perform.</a>
+      <a href="#" class="font-semibold text-white text-[0.9375rem] tracking-tight">BMP: Build. Manage. Perform.</a>
       <button
         type="button"
         id="nav-menu-toggle"
-        class="lg:hidden p-2.5 rounded-md text-foreground hover:bg-steel-light focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-2"
+        class="lg:hidden p-2.5 rounded-md text-zinc-400 hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:ring-offset-2 focus:ring-offset-zinc-950"
         aria-expanded="false"
         aria-controls="nav-menu"
       >
@@ -20,7 +20,7 @@ import { NAV_ITEMS, TABBED_CONTENT_ID, PHONE_NUMBER } from '../lib/constants';
         {NAV_ITEMS.map((item) => (
           <a
             href={`#${TABBED_CONTENT_ID}`}
-            class="nav-link text-steel hover:text-foreground text-[0.8125rem] font-medium tracking-wide uppercase"
+            class="nav-link text-zinc-400 hover:text-white text-[0.8125rem] font-medium tracking-wide uppercase transition-colors"
             data-tab={item.id}
           >
             {item.label}
@@ -28,19 +28,19 @@ import { NAV_ITEMS, TABBED_CONTENT_ID, PHONE_NUMBER } from '../lib/constants';
         ))}
         <a
           href={`tel:${PHONE_NUMBER}`}
-          class="inline-flex items-center px-4 py-2.5 bg-primary text-on-primary text-[0.8125rem] font-medium tracking-wide rounded-md hover:opacity-95 transition-opacity focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-primary"
+          class="inline-flex items-center rounded-lg bg-white text-zinc-900 px-6 py-2.5 text-sm font-semibold hover:bg-zinc-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-white"
         >
           {PHONE_NUMBER}
         </a>
       </div>
     </nav>
   </div>
-  <div id="nav-menu-dropdown" class="hidden lg:hidden absolute top-full left-0 right-0 bg-background border-b border-divider">
+  <div id="nav-menu-dropdown" class="hidden lg:hidden absolute top-full left-0 right-0 bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-800/50">
     <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col gap-1">
       {NAV_ITEMS.map((item) => (
         <a
           href={`#${TABBED_CONTENT_ID}`}
-          class="nav-link py-2.5 text-steel hover:text-foreground text-sm font-medium"
+          class="nav-link py-2.5 text-zinc-400 hover:text-white text-sm font-medium transition-colors"
           data-tab={item.id}
         >
           {item.label}
@@ -48,7 +48,7 @@ import { NAV_ITEMS, TABBED_CONTENT_ID, PHONE_NUMBER } from '../lib/constants';
       ))}
       <a
         href={`tel:${PHONE_NUMBER}`}
-        class="inline-flex items-center justify-center py-3 mt-2 bg-primary text-on-primary text-sm font-medium rounded-md"
+        class="inline-flex items-center justify-center py-3 mt-2 rounded-lg bg-white text-zinc-900 text-sm font-semibold hover:bg-zinc-200 transition-colors"
       >
         {PHONE_NUMBER}
       </a>
@@ -64,9 +64,9 @@ import { NAV_ITEMS, TABBED_CONTENT_ID, PHONE_NUMBER } from '../lib/constants';
   function updateNavScroll() {
     if (!nav) return;
     if (window.scrollY > 16) {
-      nav.classList.add('bg-background/90', 'backdrop-blur-sm', 'border-b', 'border-divider');
+      nav.classList.add('bg-zinc-950/90', 'backdrop-blur-sm', 'border-b', 'border-zinc-800/50');
     } else {
-      nav.classList.remove('bg-background/90', 'backdrop-blur-sm', 'border-b', 'border-divider');
+      nav.classList.remove('bg-zinc-950/90', 'backdrop-blur-sm', 'border-b', 'border-zinc-800/50');
     }
   }
 

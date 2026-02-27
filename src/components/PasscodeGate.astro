@@ -1,15 +1,15 @@
 ---
 import { STORAGE_KEY, PASSCODE } from '../lib/constants';
 ---
-<div id="passcode-gate" class="fixed inset-0 z-50 flex items-center justify-center bg-background/98 backdrop-blur-sm">
-  <div class="w-full max-w-sm mx-6 py-10 px-8 bg-surface border border-divider rounded-md shadow-sm">
+<div id="passcode-gate" class="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/98 backdrop-blur-sm">
+  <div class="w-full max-w-sm mx-6 py-10 px-8 bg-zinc-800/80 border border-zinc-700/50 rounded-lg shadow-sm">
     <div class="flex justify-center mb-5">
-      <svg class="w-10 h-10 text-steel" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.5">
+      <svg class="w-10 h-10 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
       </svg>
     </div>
-    <h2 class="text-lg font-semibold text-foreground text-center tracking-tight mb-1">Access required</h2>
-    <p class="text-slate text-center text-sm mb-6">Please enter the passcode to continue.</p>
+    <h2 class="text-lg font-semibold text-white text-center tracking-tight mb-1">Access required</h2>
+    <p class="text-zinc-400 text-center text-sm mb-6">Please enter the passcode to continue.</p>
     <form id="passcode-form" class="space-y-4">
       <div>
         <label for="passcode-input" class="sr-only">Passcode</label>
@@ -18,15 +18,15 @@ import { STORAGE_KEY, PASSCODE } from '../lib/constants';
           type="password"
           name="passcode"
           autocomplete="off"
-          class="w-full px-4 py-3 text-center text-base tracking-[0.4em] bg-background border border-divider rounded-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+          class="w-full px-4 py-3 text-center text-base tracking-[0.4em] bg-zinc-900 border border-zinc-700/50 rounded-lg text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-white focus:ring-offset-2 focus:ring-offset-zinc-800"
           placeholder="••••"
           aria-describedby="passcode-error"
         />
-        <p id="passcode-error" class="mt-2 text-sm text-destructive hidden" role="alert">Invalid passcode</p>
+        <p id="passcode-error" class="mt-2 text-sm text-red-400 hidden" role="alert">Invalid passcode</p>
       </div>
       <button
         type="submit"
-        class="w-full py-3 bg-primary text-on-primary text-sm font-medium rounded-md hover:opacity-95 transition-opacity focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-primary"
+        class="w-full py-3 rounded-lg bg-white text-zinc-900 text-sm font-semibold hover:bg-zinc-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-800 focus:ring-white"
       >
         Unlock
       </button>
